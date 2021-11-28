@@ -1,55 +1,83 @@
 #pragma once
 #include <map>
+#include <vector>
 
 namespace matrix {
 
-template <typename T, T Default, int Dim = 2>
+template<typename T, T Default>
 class Matrix
 {
-    using itemType = Matrix<T, Default, Dim - 1>;
+
+private:
+
+    class MatrixType
+    {
+        friend class Matrix;
+
+    public:
+
+        T &operator=(const T &value)
+        {
+            m_parent.m_matrix[{m_row, m_col}] = value;
+            return m_parent.m_matrix[{m_row, m_col}];
+        }
+
+        bool operator==(const T &value)
+        {
+            T tmp = Default;
+            auto it = m_parent.m_matrix.find({m_row, m_col});
+            auto end = m_parent.m_matrix.end();
+            if (it != end) {
+                tmp = m_parent.m_matrix[{m_row, m_col}];
+            }
+            return tmp == value;
+        }
+
+    private:
+        Matrix &m_parent;
+        int m_row;
+        int m_col;
+
+        MatrixType(Matrix &parent, int row, int col)
+            : m_parent(parent)
+            , m_row(row)
+            , m_col(col)
+        {}
+    };
+
+
+    class Row
+    {
+        friend class Matrix;
+    public:
+
+        MatrixType operator[](int col)
+        {
+            return MatrixType(m_parent, m_row, col);
+        }
+
+    private:
+        Row(Matrix &parent, int row) : m_parent(parent), m_row(row) {}
+        Matrix &m_parent;
+        int m_row;
+
+    };
+
+    std::map<std::pair<int, int>, T> m_matrix;
 
 public:
 
-    itemType& operator[](int idx)
+    Matrix() = default;
+
+    Row operator[](int row)
     {
-        return m_data[idx];
+        return Row(*this, row);
     }
 
-    const itemType& operator[](int idx) const
+    std::size_t size() const
     {
-        return m_data[idx];
+        return m_matrix.size();
     }
-
-    size_t size() const
-    {
-        return m_data.size();
-    }
-
-private:
-    std::map<int, itemType> m_data;
-};
-
-template <typename T, T Default>
-class Matrix<T, Default, 1>
-{
-public:
-    T& operator[](int idx)
-    {
-        return m_data[idx];
-    }
-
-    const T& operator[](int idx) const
-    {
-        return m_data[idx];
-    }
-
-    size_t size() const
-    {
-        return m_data.size();
-    }
-
-private:
-    std::map<int, T> m_data;
 };
 
 }
