@@ -14,9 +14,10 @@ set (
 )
 
 # HEADERS
-# set (
-    # HEADERS
-# )
+ set (
+     HEADERS
+        matrix.h
+ )
 
 # EXECUTABLE
 add_executable(matrix ${SOURCES} ${HEADERS})
@@ -25,7 +26,7 @@ add_executable(matrix ${SOURCES} ${HEADERS})
 set_target_properties (
     matrix
         PROPERTIES
-            CMAKE_CXX_STANDARD 14
+            CMAKE_CXX_STANDARD 17
             CMAKE_CXX_STANDARD_REQUIRED ON
 )
 
