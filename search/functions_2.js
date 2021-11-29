@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['end_0',['end',['../classmatrix_1_1_matrix.html#a4a03652cb36059133ce318800ee9e359',1,'matrix::Matrix']]],
-  ['example_1',['example',['../namespacematrix.html#a8e7911af94276f92578d346353e81303',1,'matrix']]]
+  ['end_0',['end',['../classmatrix_1_1_matrix.html#aa96b841fb06d43894b88ef8ae67b5ca7',1,'matrix::Matrix']]],
+  ['example_1',['example',['../namespacematrix.html#a8fb269c4305774c1aa156764514c4421',1,'matrix']]]
 ];

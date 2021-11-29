@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>vector_editor: matrix::Matrix&lt; T, Default &gt; Class Template Reference</title>
+<title>vector_editor: matrix::Matrix&lt; T, Default, Dimension &gt; Class Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -71,7 +71,7 @@ $(function() {
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="classmatrix_1_1_matrix-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">matrix::Matrix&lt; T, Default &gt; Class Template Reference</div></div>
+  <div class="headertitle"><div class="title">matrix::Matrix&lt; T, Default, Dimension &gt; Class Template Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -84,33 +84,33 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:aa3cf6b8547b33f1687ccf138cb166357"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmatrix_1_1_matrix.html#aa3cf6b8547b33f1687ccf138cb166357">map_iter</a> = typename std::map&lt; std::pair&lt; int, int &gt;, T &gt;::<a class="el" href="classmatrix_1_1_matrix_1_1iterator.html">iterator</a></td></tr>
-<tr class="separator:aa3cf6b8547b33f1687ccf138cb166357"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a3040c17db3c60ae487862d86f38743"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmatrix_1_1_matrix.html#a9a3040c17db3c60ae487862d86f38743">map_iter</a> = typename std::map&lt; std::vector&lt; int &gt;, T &gt;::<a class="el" href="classmatrix_1_1_matrix_1_1iterator.html">iterator</a></td></tr>
+<tr class="separator:a9a3040c17db3c60ae487862d86f38743"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a027228c2585f6ef4cf76152bd0ed5d74"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmatrix_1_1_matrix.html#a027228c2585f6ef4cf76152bd0ed5d74">Matrix</a> ()=default</td></tr>
-<tr class="separator:a027228c2585f6ef4cf76152bd0ed5d74"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1702cf0fc9c75f8190e9b2cfedb0e7b8"><td class="memItemLeft" align="right" valign="top">Row&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmatrix_1_1_matrix.html#a1702cf0fc9c75f8190e9b2cfedb0e7b8">operator[]</a> (int row)</td></tr>
-<tr class="separator:a1702cf0fc9c75f8190e9b2cfedb0e7b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac8e5e5df30fc4c857694a276431f6652"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmatrix_1_1_matrix.html#ac8e5e5df30fc4c857694a276431f6652">size</a> () const</td></tr>
-<tr class="separator:ac8e5e5df30fc4c857694a276431f6652"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a23a29860e90469e43d6fe32394eec222"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmatrix_1_1_matrix_1_1iterator.html">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmatrix_1_1_matrix.html#a23a29860e90469e43d6fe32394eec222">begin</a> ()</td></tr>
-<tr class="separator:a23a29860e90469e43d6fe32394eec222"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4a03652cb36059133ce318800ee9e359"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmatrix_1_1_matrix_1_1iterator.html">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmatrix_1_1_matrix.html#a4a03652cb36059133ce318800ee9e359">end</a> ()</td></tr>
-<tr class="separator:a4a03652cb36059133ce318800ee9e359"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adfb61efa6761ef07a9e28b6b01c698d6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmatrix_1_1_matrix.html#adfb61efa6761ef07a9e28b6b01c698d6">Matrix</a> ()=default</td></tr>
+<tr class="separator:adfb61efa6761ef07a9e28b6b01c698d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6fcf9a678ace76532a0b6b5caecbe849"><td class="memItemLeft" align="right" valign="top">SubMatrix&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmatrix_1_1_matrix.html#a6fcf9a678ace76532a0b6b5caecbe849">operator[]</a> (int row)</td></tr>
+<tr class="separator:a6fcf9a678ace76532a0b6b5caecbe849"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeae38a4e1845e07d0c9fdf47d09e43f7"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmatrix_1_1_matrix.html#aeae38a4e1845e07d0c9fdf47d09e43f7">size</a> () const</td></tr>
+<tr class="separator:aeae38a4e1845e07d0c9fdf47d09e43f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4a09a2b8ba495068920f32d41d89e53"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmatrix_1_1_matrix_1_1iterator.html">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmatrix_1_1_matrix.html#ab4a09a2b8ba495068920f32d41d89e53">begin</a> ()</td></tr>
+<tr class="separator:ab4a09a2b8ba495068920f32d41d89e53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa96b841fb06d43894b88ef8ae67b5ca7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmatrix_1_1_matrix_1_1iterator.html">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmatrix_1_1_matrix.html#aa96b841fb06d43894b88ef8ae67b5ca7">end</a> ()</td></tr>
+<tr class="separator:aa96b841fb06d43894b88ef8ae67b5ca7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Typedef Documentation</h2>
-<a id="aa3cf6b8547b33f1687ccf138cb166357" name="aa3cf6b8547b33f1687ccf138cb166357"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa3cf6b8547b33f1687ccf138cb166357">&#9670;&nbsp;</a></span>map_iter</h2>
+<a id="a9a3040c17db3c60ae487862d86f38743" name="a9a3040c17db3c60ae487862d86f38743"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a3040c17db3c60ae487862d86f38743">&#9670;&nbsp;</a></span>map_iter</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T , T Default&gt; </div>
+template&lt;typename T , T Default, int Dimension = 2&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classmatrix_1_1_matrix.html">matrix::Matrix</a>&lt; T, Default &gt;::<a class="el" href="classmatrix_1_1_matrix.html#aa3cf6b8547b33f1687ccf138cb166357">map_iter</a> =  typename std::map&lt;std::pair&lt;int, int&gt;, T&gt;::<a class="el" href="classmatrix_1_1_matrix_1_1iterator.html">iterator</a></td>
+          <td class="memname">using <a class="el" href="classmatrix_1_1_matrix.html">matrix::Matrix</a>&lt; T, Default, Dimension &gt;::<a class="el" href="classmatrix_1_1_matrix.html#a9a3040c17db3c60ae487862d86f38743">map_iter</a> =  typename std::map&lt;std::vector&lt;int&gt;, T&gt;::<a class="el" href="classmatrix_1_1_matrix_1_1iterator.html">iterator</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -118,19 +118,19 @@ template&lt;typename T , T Default&gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a027228c2585f6ef4cf76152bd0ed5d74" name="a027228c2585f6ef4cf76152bd0ed5d74"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a027228c2585f6ef4cf76152bd0ed5d74">&#9670;&nbsp;</a></span>Matrix()</h2>
+<a id="adfb61efa6761ef07a9e28b6b01c698d6" name="adfb61efa6761ef07a9e28b6b01c698d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adfb61efa6761ef07a9e28b6b01c698d6">&#9670;&nbsp;</a></span>Matrix()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T , T Default&gt; </div>
+template&lt;typename T , T Default, int Dimension = 2&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classmatrix_1_1_matrix.html">matrix::Matrix</a>&lt; T, Default &gt;::<a class="el" href="classmatrix_1_1_matrix.html">Matrix</a> </td>
+          <td class="memname"><a class="el" href="classmatrix_1_1_matrix.html">matrix::Matrix</a>&lt; T, Default, Dimension &gt;::<a class="el" href="classmatrix_1_1_matrix.html">Matrix</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -146,19 +146,19 @@ template&lt;typename T , T Default&gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a23a29860e90469e43d6fe32394eec222" name="a23a29860e90469e43d6fe32394eec222"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a23a29860e90469e43d6fe32394eec222">&#9670;&nbsp;</a></span>begin()</h2>
+<a id="ab4a09a2b8ba495068920f32d41d89e53" name="ab4a09a2b8ba495068920f32d41d89e53"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab4a09a2b8ba495068920f32d41d89e53">&#9670;&nbsp;</a></span>begin()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T , T Default&gt; </div>
+template&lt;typename T , T Default, int Dimension = 2&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classmatrix_1_1_matrix_1_1iterator.html">iterator</a> <a class="el" href="classmatrix_1_1_matrix.html">matrix::Matrix</a>&lt; T, Default &gt;::begin </td>
+          <td class="memname"><a class="el" href="classmatrix_1_1_matrix_1_1iterator.html">iterator</a> <a class="el" href="classmatrix_1_1_matrix.html">matrix::Matrix</a>&lt; T, Default, Dimension &gt;::begin </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -173,19 +173,19 @@ template&lt;typename T , T Default&gt; </div>
 
 </div>
 </div>
-<a id="a4a03652cb36059133ce318800ee9e359" name="a4a03652cb36059133ce318800ee9e359"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4a03652cb36059133ce318800ee9e359">&#9670;&nbsp;</a></span>end()</h2>
+<a id="aa96b841fb06d43894b88ef8ae67b5ca7" name="aa96b841fb06d43894b88ef8ae67b5ca7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa96b841fb06d43894b88ef8ae67b5ca7">&#9670;&nbsp;</a></span>end()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T , T Default&gt; </div>
+template&lt;typename T , T Default, int Dimension = 2&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classmatrix_1_1_matrix_1_1iterator.html">iterator</a> <a class="el" href="classmatrix_1_1_matrix.html">matrix::Matrix</a>&lt; T, Default &gt;::end </td>
+          <td class="memname"><a class="el" href="classmatrix_1_1_matrix_1_1iterator.html">iterator</a> <a class="el" href="classmatrix_1_1_matrix.html">matrix::Matrix</a>&lt; T, Default, Dimension &gt;::end </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -200,19 +200,19 @@ template&lt;typename T , T Default&gt; </div>
 
 </div>
 </div>
-<a id="a1702cf0fc9c75f8190e9b2cfedb0e7b8" name="a1702cf0fc9c75f8190e9b2cfedb0e7b8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1702cf0fc9c75f8190e9b2cfedb0e7b8">&#9670;&nbsp;</a></span>operator[]()</h2>
+<a id="a6fcf9a678ace76532a0b6b5caecbe849" name="a6fcf9a678ace76532a0b6b5caecbe849"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6fcf9a678ace76532a0b6b5caecbe849">&#9670;&nbsp;</a></span>operator[]()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T , T Default&gt; </div>
+template&lt;typename T , T Default, int Dimension = 2&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">Row <a class="el" href="classmatrix_1_1_matrix.html">matrix::Matrix</a>&lt; T, Default &gt;::operator[] </td>
+          <td class="memname">SubMatrix <a class="el" href="classmatrix_1_1_matrix.html">matrix::Matrix</a>&lt; T, Default, Dimension &gt;::operator[] </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>row</em></td><td>)</td>
@@ -228,19 +228,19 @@ template&lt;typename T , T Default&gt; </div>
 
 </div>
 </div>
-<a id="ac8e5e5df30fc4c857694a276431f6652" name="ac8e5e5df30fc4c857694a276431f6652"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac8e5e5df30fc4c857694a276431f6652">&#9670;&nbsp;</a></span>size()</h2>
+<a id="aeae38a4e1845e07d0c9fdf47d09e43f7" name="aeae38a4e1845e07d0c9fdf47d09e43f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeae38a4e1845e07d0c9fdf47d09e43f7">&#9670;&nbsp;</a></span>size()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T , T Default&gt; </div>
+template&lt;typename T , T Default, int Dimension = 2&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::size_t <a class="el" href="classmatrix_1_1_matrix.html">matrix::Matrix</a>&lt; T, Default &gt;::size </td>
+          <td class="memname">std::size_t <a class="el" href="classmatrix_1_1_matrix.html">matrix::Matrix</a>&lt; T, Default, Dimension &gt;::size </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
