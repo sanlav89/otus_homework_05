@@ -5,7 +5,7 @@ using namespace matrix;
 int main(void)
 {
     // Example
-    example();
+//    example();
 
     // Task
     const auto matrix_size = 10;
@@ -37,11 +37,23 @@ int main(void)
         std::tie(x, y, v) = c;
         std::cout << "(" << x << "," << y << ") = " << v << std::endl;
     }
+    std::cout << std::endl;
 
+    const auto i1 = 100;
+    const auto i2 = 100;
     std::cout << "Canonical :" << std::endl;
     std::cout << "((matrix[100][100] = 314) = 0) = 217;" << std::endl;
-    ((matrix[100][100] = 314) = 0) = 217;
-    std::cout << "(" << 100 << "," << 100 << ") = " << matrix[100][100] << std::endl;
+    ((matrix[i1][i2] = 314) = 0) = 217;
+    std::cout << "(" << i1 << "," << i2 << ") = " << matrix[100][100] << std::endl;
+    std::cout << std::endl;
+
+    const auto i3 = 100;
+    std::cout << "N-dimentional (N = 3) :" << std::endl;
+    Matrix<int, 0, 3> matrix3;
+    matrix3[i1][i2][i3] = 3;
+    std::cout << "(" << i1 << "," << i2 << "," << i3 << ") = " << matrix3[i1][i2][i3] << std::endl;
+    std::cout << "Size:" << matrix3.size() << std::endl;
+    std::cout << std::endl;
 
     return 0;
 }
