@@ -5,7 +5,7 @@ using namespace matrix;
 int main(void)
 {
     // Example
-//    example();
+    example();
 
     // Task
     const auto matrix_size = 10;

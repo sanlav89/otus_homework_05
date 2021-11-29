@@ -83,11 +83,11 @@ private:
 
     };
 
-    std::map<std::pair<int, int>, T> m_matrix;
+    std::map<std::vector<int>, T> m_matrix;
 
 public:
 
-    using map_iter = typename std::map<std::pair<int, int>, T>::iterator;
+    using map_iter = typename std::map<std::vector<int>, T>::iterator;
 
     // Iterator Class
     class iterator {
@@ -108,8 +108,8 @@ public:
 
         std::tuple<int, int, T> operator*() const
         {
-            return std::make_tuple((*m_it).first.first,
-                                   (*m_it).first.second,
+            return std::make_tuple((*m_it).first.at(0),
+                                   (*m_it).first.at(1),
                                    (*m_it).second);
         }
 
