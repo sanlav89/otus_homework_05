@@ -7,23 +7,29 @@
 
 namespace matrix {
 
-template<typename T, T Default>
+template<typename T, T Default, int Dimension = 2>
 class Matrix
 {
 
 private:
 
-    class MatrixType
+    class SubMatrix
     {
         friend class Matrix;
-
     public:
+
+        SubMatrix operator[](int idx)
+        {
+            assert(m_idx.size() < Dimension);
+            return SubMatrix(*this, idx);
+        }
 
         T &operator=(const T &value)
         {
+            assert(m_idx.size() == Dimension);
             if (value != m_default) {
-                m_parent.m_matrix[{m_row, m_col}] = value;
-                return m_parent.m_matrix[{m_row, m_col}];
+                m_parent.m_matrix[m_idx] = value;
+                return m_parent.m_matrix[m_idx];
             } else {
                 return m_default;
             }
@@ -34,60 +40,49 @@ private:
             return find() == value;
         }
 
-        friend std::ostream& operator<<(std::ostream& os, const MatrixType& mt)
+        friend std::ostream& operator<<(std::ostream& os, const SubMatrix& mt)
         {
             os << mt.find();
             return os;
         }
 
     private:
-        Matrix &m_parent;
-        int m_row;
-        int m_col;
-        T m_default;
+        SubMatrix(Matrix &parent, int idx)
+            : m_parent(parent)
+            , m_idx({idx})
+            , m_default(Default)
+        {}
+
+        SubMatrix(const SubMatrix &other, int idx)
+            : m_parent(other.m_parent)
+            , m_idx(other.m_idx)
+            , m_default(Default)
+        {
+            m_idx.push_back(idx);
+        }
 
         T find() const
         {
             T tmp = m_default;
-            auto it = m_parent.m_matrix.find({m_row, m_col});
+            auto it = m_parent.m_matrix.find(m_idx);
             auto end = m_parent.m_matrix.end();
             if (it != end) {
-                tmp = m_parent.m_matrix[{m_row, m_col}];
+                tmp = m_parent.m_matrix[m_idx];
             }
             return tmp;
         }
 
-        MatrixType(Matrix &parent, int row, int col)
-            : m_parent(parent)
-            , m_row(row)
-            , m_col(col)
-            , m_default(Default)
-        {}
-    };
-
-
-    class Row
-    {
-        friend class Matrix;
-    public:
-
-        MatrixType operator[](int col)
-        {
-            return MatrixType(m_parent, m_row, col);
-        }
-
-    private:
-        Row(Matrix &parent, int row) : m_parent(parent), m_row(row) {}
         Matrix &m_parent;
-        int m_row;
+        std::vector<int> m_idx;
+        T m_default;
 
     };
 
-    std::map<std::pair<int, int>, T> m_matrix;
+    std::map<std::vector<int>, T> m_matrix;
 
 public:
 
-    using map_iter = typename std::map<std::pair<int, int>, T>::iterator;
+    using map_iter = typename std::map<std::vector<int>, T>::iterator;
 
     // Iterator Class
     class iterator {
@@ -108,8 +103,9 @@ public:
 
         std::tuple<int, int, T> operator*() const
         {
-            return std::make_tuple((*m_it).first.first,
-                                   (*m_it).first.second,
+            assert((*m_it).first.size() == 2);
+            return std::make_tuple((*m_it).first.at(0),
+                                   (*m_it).first.at(1),
                                    (*m_it).second);
         }
 
@@ -125,9 +121,9 @@ public:
 
     Matrix() = default;
 
-    Row operator[](int row)
+    SubMatrix operator[](int row)
     {
-        return Row(*this, row);
+        return SubMatrix(*this, {row});
     }
 
     std::size_t size() const
@@ -147,11 +143,9 @@ public:
 };
 
 // Task Example
-void example()
+void example(std::ostream &os = std::cout)
 {
-    // Example
-
-    std::cout << "Example: " << std::endl;
+    os << "Example: " << std::endl;
 
     Matrix<int, -1> matrix;
     assert(matrix.size() == 0);
@@ -168,13 +162,10 @@ void example()
         int y;
         int v;
         std::tie(x, y, v) = c;
-        std::cout << x << y << v << std::endl;
+        os << x << y << v << std::endl;
     }
 
-    ((matrix[100][100] = 314) = 0) = 217;
-    assert(matrix[100][100] == 217);
-
-    std::cout << std::endl;
+    os << std::endl;
 }
 
 }
